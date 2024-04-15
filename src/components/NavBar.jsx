@@ -22,7 +22,7 @@ function NavBar() {
             >
                 <Nav.Link href="#action1">Home</Nav.Link>
                 <Nav.Link href="/Library">Library</Nav.Link>
-                <Nav.Link href="/AdminHome">Admin</Nav.Link>
+                <Nav.Link href="/AdminHome">About</Nav.Link>
 
             </Nav>
             <div style={{display:"flex",gap:"20px"}}>

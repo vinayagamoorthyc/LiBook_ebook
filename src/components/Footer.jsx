@@ -15,7 +15,7 @@ export default function Footer() {
                 <div style={{display:"flex",flexDirection:"row",gap:"50px",fontWeight:"600"}}>
                     <Nav.Link href="#action1">Home</Nav.Link>
                     <Nav.Link href="/Library">Library</Nav.Link>
-                    <Nav.Link href="/AdminHome">Admin</Nav.Link>
+                    <Nav.Link href="/AdminHome">About</Nav.Link>
                 </div>
             </div>
             <center><hr style={{color:"rgba(0, 0, 0, 0.3)",width:"80%"}}/></center>
