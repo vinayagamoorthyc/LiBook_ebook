@@ -11,6 +11,8 @@ export default function TopStories() {
         <TopCard/>
         <TopCard/>
         <TopCard/>
+        <TopCard/>
+        <TopCard/>
         </div>
     </center>
   )
