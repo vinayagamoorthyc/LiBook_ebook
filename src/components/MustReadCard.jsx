@@ -1,20 +1,17 @@
 import React from "react";
-import {Card, CardFooter, Image, Button} from "@nextui-org/react";
+import {Card} from "@nextui-org/react";
 
-export default function MustReadCard() {
-  const [isFollowed, setIsFollowed] = React.useState(false);
+export default function MustReadCard(props) {
 
   return (
     <div>
-      <Card
-      className="mustreadcard"
-    >
+      <Card className="mustreadcard">
       <img
-        alt="Woman listing to music"
-        src="https://m.media-amazon.com/images/I/618y2EiIa7L._AC_UF1000,1000_QL80_.jpg"
+        alt=""
+        src={props.url}
       />
     </Card>
-    <div style={{textAlign:"start"}}>Name//</div>
+    <div style={{textAlign:"start"}}>{props.name}</div>
     </div>
   );
 }

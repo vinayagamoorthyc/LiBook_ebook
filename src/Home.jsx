@@ -12,7 +12,7 @@ import About from './about/About'
 export default function() {
   return (
     <div className='wholebody'>
-        <NavBar/><br /><br /><br /><br /><br /><br />
+        <NavBar/><br /><br /><br /><br /><br />
         <Carousel/>
         <Distributors/>
         <MustRead/>

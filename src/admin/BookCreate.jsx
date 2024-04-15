@@ -8,6 +8,7 @@ function BookCreate()
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
   const [year, setYear] = useState("");
+  const [url,setUrl] = useState("");
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
@@ -22,7 +23,7 @@ function BookCreate()
           {
           name: name,
           author: author,
-            year: year
+            year: year,url:url
           }).then(()=>{
             alert("Student Registation Successfully");
             window.location.reload();
@@ -36,6 +37,7 @@ function BookCreate()
       setAuthor(e.author);
       setYear(e.year); 
       setBookId(e.bookId);
+      setUrl(e.url);
     }
   
     async function DeleteBook(id)
@@ -50,13 +52,14 @@ function BookCreate()
     {
       e.preventDefault();
           await axios.put("http://localhost:8080/books/edit/" + bookId ,
-        {name: name,author: author,year: year})
+        {name: name,author: author,year: year,url:url})
         .then(()=>{
           alert("Registation Updateddddd");
           setBookId("");
           setName("");
           setAuthor("");
           setYear("");
+          setUrl("");
           window.location.reload();
         }).catch(err=>alert("Student Updateddd Failed"));
     }
@@ -99,9 +102,19 @@ function BookCreate()
                     setYear(e.target.value);      
                   }}
                 />
-
-
               </div>
+
+              <div class="form-group">
+                <label>url</label>
+                <input  type="text" class="form-control" id="bookurl"
+                value={url}
+                onChange={(e) =>
+                  {
+                    setUrl(e.target.value);      
+                  }}
+                />
+              </div>
+
               <div>
               <button   class="btn btn-primary mt-4"  onClick={save}>Add Book</button>
 
@@ -127,7 +140,8 @@ function BookCreate()
                 <tr>
                 <td>{e.name}</td>
                 <td>{e.author}</td>
-                <td>{e.year}</td>        
+                <td>{e.year}</td>
+                <td>{e.url}</td>        
                 <td>
                     <button type="button" class="btn btn-warning"  onClick={() => editBook(e)} >Edit</button>  
                     <button type="button" class="btn btn-danger" onClick={() => DeleteBook(e.bookId)}>Delete</button>
