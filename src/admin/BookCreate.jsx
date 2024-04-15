@@ -9,6 +9,7 @@ function BookCreate()
   const [author, setAuthor] = useState("");
   const [year, setYear] = useState("");
   const [url,setUrl] = useState("");
+  const [desc,setDesc] = useState("");
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
@@ -23,7 +24,7 @@ function BookCreate()
           {
           name: name,
           author: author,
-            year: year,url:url
+            year: year,url:url,desc:desc
           }).then(()=>{
             alert("Student Registation Successfully");
             window.location.reload();
@@ -38,6 +39,7 @@ function BookCreate()
       setYear(e.year); 
       setBookId(e.bookId);
       setUrl(e.url);
+      setDesc(e.desc);
     }
   
     async function DeleteBook(id)
@@ -111,6 +113,17 @@ function BookCreate()
                 onChange={(e) =>
                   {
                     setUrl(e.target.value);      
+                  }}
+                />
+              </div>
+
+              <div class="form-group">
+                <label>desc</label>
+                <input  type="text" class="form-control" id="bookdesc"
+                value={desc}
+                onChange={(e) =>
+                  {
+                    setDesc(e.target.value);      
                   }}
                 />
               </div>

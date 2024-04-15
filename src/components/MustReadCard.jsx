@@ -7,6 +7,7 @@ export default function MustReadCard(props) {
     <div>
       <Card className="mustreadcard">
       <img
+      width={200}
         alt=""
         src={props.url}
       />
