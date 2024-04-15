@@ -1,9 +1,7 @@
-import React from "react";
-import {Card, CardFooter, Image, Button} from "@nextui-org/react";
+import { Card } from '@nextui-org/react'
+import React from 'react'
 
-export default function MustReadCard() {
-  const [isFollowed, setIsFollowed] = React.useState(false);
-
+export default function TopCard() {
   return (
     <div>
       <Card
@@ -16,5 +14,5 @@ export default function MustReadCard() {
     </Card>
     <div style={{textAlign:"start"}}>Name//</div>
     </div>
-  );
+  )
 }

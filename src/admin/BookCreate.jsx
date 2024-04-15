@@ -3,7 +3,7 @@ import {useEffect, useState } from "react";
  
 function BookCreate()
 {
-
+  
   const [bookId, setBookId] = useState('');
   const [name, setName] = useState("");
   const [author, setAuthor] = useState("");
@@ -50,13 +50,8 @@ function BookCreate()
     {
       e.preventDefault();
           await axios.put("http://localhost:8080/books/edit/" + bookId ,
-        {
-
-          name: name,
-          author: author,
-          year: year
-    
-        }).then(()=>{
+        {name: name,author: author,year: year})
+        .then(()=>{
           alert("Registation Updateddddd");
           setBookId("");
           setName("");
