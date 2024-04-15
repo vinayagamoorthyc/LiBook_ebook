@@ -9,7 +9,7 @@ import d5 from "../images/d5.png"
 
 export default function Distributors() {
   return (
-    <center>
+    <center  id='brands'>
         <div className='dist_flex'>
             <img width={200} src={d1} alt="" />
             <img width={200} src={d2} alt="" />
