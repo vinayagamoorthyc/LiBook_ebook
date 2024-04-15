@@ -12,11 +12,11 @@ import About from './about/About'
 export default function() {
   return (
     <div className='wholebody'>
-        <NavBar/>
+        <NavBar/><br /><br /><br /><br /><br /><br />
         <Carousel/>
+        <Distributors/>
         <MustRead/>
         <TopStories/>
-        <Distributors/>
         <LoveStories/>
         <About/>
         <Footer/>

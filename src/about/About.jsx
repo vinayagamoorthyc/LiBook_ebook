@@ -1,5 +1,5 @@
 import React from 'react';
-import about from "../images/about.png"
+import about from "../images/intro.png"
 import "../about/About.css"
 
 export default function About() {
@@ -7,7 +7,7 @@ export default function About() {
     <center id='about'>
         <div className='about_flex'>
             <div>
-                <img width={500} src={about} alt="" />
+                <img width={550} src={about} alt="" />
             </div>
             <div style={{width:"50%"}}>
                 <h3>About Us</h3>
