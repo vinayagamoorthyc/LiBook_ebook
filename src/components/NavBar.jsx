@@ -38,9 +38,9 @@ function NavBar() {
             </Nav>
             <div style={{display:"flex",gap:"20px",alignItems:"center"}}>
                 <a class="button1" style={{clr: "#7808d0"}} onClick={()=>check()}>Admin Portal</a>
-                <i class="bi bi-github" style={{fontSize:"22px"}}></i>
-                <i class="bi bi-linkedin" style={{fontSize:"22px"}}></i>
-                <i class="bi bi-instagram" style={{fontSize:"22px"}}></i>
+                <i class="bi bi-github" style={{fontSize:"22px"}} onClick={()=>{window.open("https://github.com/vinayagamoorthyc","_blank")}}></i>
+                <i class="bi bi-linkedin" style={{fontSize:"22px"}} onClick={()=>{window.open("https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/","_blank")}}></i>
+                <i class="bi bi-instagram" style={{fontSize:"22px"}} onClick={()=>{window.open("https://www.instagram.com/_.kolaru.__/","_blank")}}></i>
             </div>
             </Navbar.Collapse>
         </Container>

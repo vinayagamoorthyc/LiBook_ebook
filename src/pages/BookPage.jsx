@@ -31,6 +31,7 @@ export default function BookPage() {
           <p>The Book was published in <b>{book.year}</b> by the author who named {book.author}.</p>
           <p>Get ready to uncover the dark secrets and betrayals in the book. A thrilling story awaits you.</p>
           <p><b>Language: </b>Standard English (US & UK)</p>
+          <div style={{display:"flex",flexDirection:"row",alignItems:"center",gap:"10px"}}>
                       <a href="#read" class="button1" style={{clr: "#7808d0"}}>
                         <span class="button1__icon-wrapper">
                             <svg
@@ -61,7 +62,8 @@ export default function BookPage() {
                         </span>
                         Start reading
                       </a>&nbsp;&nbsp;
-                      <i class="bi bi-share"></i>
+                      <h5><i class="bi bi-share"></i></h5>
+          </div>            
         </div>
       </div><br />
       <div className='bookpage_flex' id='read'>
