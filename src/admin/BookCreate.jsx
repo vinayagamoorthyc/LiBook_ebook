@@ -13,14 +13,14 @@ function BookCreate()
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
-    axios.get("http://localhost:8080/topbooks/getAll")
+    axios.get("http://localhost:8080/lovebooks/getAll")
     .then((e=>setBooks(e.data)))
     .catch(err=>console.log(err));
     }, []);
     
       async function save(e){
           e.preventDefault();
-          axios.post("http://localhost:8080/topbooks/create",
+          axios.post("http://localhost:8080/lovebooks/create",
           {
           name: name,
           author: author,
@@ -46,7 +46,7 @@ function BookCreate()
   
     async function DeleteBook(id)
     {
-          await axios.delete("http://localhost:8080/topbooks/delete/" + id).then(()=>{
+          await axios.delete("http://localhost:8080/lovebooks/delete/" + id).then(()=>{
             alert("Student deleted Successfully");
             window.location.reload();
           })
@@ -55,7 +55,7 @@ function BookCreate()
     async function update(e)
     {
       e.preventDefault();
-          await axios.put("http://localhost:8080/topbooks/edit/" + bookId ,
+          await axios.put("http://localhost:8080/lovebooks/edit/" + bookId ,
         {name: name,author: author,year: year,url:url})
         .then(()=>{
           alert("Registation Updateddddd");

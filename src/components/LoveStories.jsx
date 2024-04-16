@@ -1,18 +1,25 @@
-import React from 'react'
-import LoveCard from './LoveCard'
+import React, { useEffect, useState } from 'react'
+import LoveCard from './LoveCard';
+import axios from "axios";
 
 export default function LoveStories() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/lovebooks/getAll")
+    .then((e=>setBooks(e.data)))
+    .catch(err=>console.log(err));
+    }, []);
+
   return (
     <center>
         <h2 style={{margin:"75px"}}>Love Stories</h2>
         <div className='mustread_flex'>
-            <LoveCard/>
-            <LoveCard/>
-            <LoveCard/>
-            <LoveCard/>
-            <LoveCard/>
-            <LoveCard/>
-            <LoveCard/>
+        {books.map((e)=>{
+              return(
+                <LoveCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} />
+            )})
+          }
         </div>
     </center>
   )

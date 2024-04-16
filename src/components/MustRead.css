@@ -1,6 +1,7 @@
 .mustread_flex{
     display: flex;
     flex-direction: row;
+    align-items: center;
     overflow: scroll;
     width: 80%;
     padding: 25px;
