@@ -17,5 +17,6 @@
 .mustreadcard{
     min-width: 150px;
     overflow: none;
+    border-radius: 0px;
 }
  
