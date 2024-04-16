@@ -26,7 +26,6 @@ function BookCreate()
           author: author,
             year: year,url:url,desc:desc
           }).then(()=>{
-            alert("Book added Successfully");
             window.location.reload();
           }).catch((err)=>{
             console.log(err)

@@ -5,7 +5,6 @@ import axios from 'axios';
 
 export default function MustRead() {
   const [books, setBooks] = useState([]);
-  console.log(books)
 
   useEffect(() => {
     axios.get("http://localhost:8080/books/getAll")
