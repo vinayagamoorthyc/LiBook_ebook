@@ -1,10 +1,11 @@
 import React from "react";
 import {Card} from "@nextui-org/react";
+import { Link } from "react-router-dom";
 
 export default function MustReadCard(props) {
 
   return (
-    <div>
+    <Link to={`/BookPage/${props.bookId}`} style={{textDecoration:"none",color:"black"}}>
       <Card className="mustreadcard">
       <img
       width={200}
@@ -13,6 +14,6 @@ export default function MustReadCard(props) {
       />
     </Card>
     <div style={{textAlign:"start"}}>{props.name}</div>
-    </div>
+    </Link>
   );
 }

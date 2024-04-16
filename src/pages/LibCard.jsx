@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card } from '@nextui-org/react';
 import "../components/MustRead.css"
+import { Link } from 'react-router-dom';
 
 export default function LibCard(props) {
   return (
-    <div>
+    <Link to={`/BookPage/${props.bookId}`} style={{textDecoration:"none",color:"black"}}>
         <Card
         className="mustreadcard" 
         >
@@ -15,6 +16,6 @@ export default function LibCard(props) {
         />
         </Card>
         <div style={{textAlign:"start"}}>{props.name}</div>
-    </div>
+    </Link>
   )
 }

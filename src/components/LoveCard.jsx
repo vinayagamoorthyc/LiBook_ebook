@@ -1,9 +1,10 @@
 import { Card } from '@nextui-org/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function LoveCard(props) {
   return (
-    <div>
+    <Link to={`/BookPage/${props.bookId}`} style={{textDecoration:"none",color:"black"}}>
         <Card
       className="mustreadcard"
     >
@@ -14,6 +15,6 @@ export default function LoveCard(props) {
       />
     </Card>
     <div style={{textAlign:"start"}}>{props.name}</div>
-    </div>
+    </Link>
   )
 }
