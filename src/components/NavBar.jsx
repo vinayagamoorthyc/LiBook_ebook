@@ -8,6 +8,16 @@ import "./NavBar.css"
 import logo from "../images/logo.png"
 
 function NavBar() {
+
+    function check(){
+        let k=window.prompt("Enter your admin key!");
+        if(k=="vinayaga"){
+            window.location="/BookCreate";
+        }else{
+            alert("Access denied!");
+        }
+    }
+
   return (
     <center>
         <Navbar expand="lg" className="navbar">
@@ -20,16 +30,17 @@ function NavBar() {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
             >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="/AdminHome">Category</Nav.Link>
+                <Nav.Link href="#Home">Home</Nav.Link>
+                <Nav.Link href="/Library">Library</Nav.Link>
                 <Nav.Link href="#about">About</Nav.Link>
                 <Nav.Link href="#brands">Brands</Nav.Link>
                 <Nav.Link href="#topstories">Stories</Nav.Link>
             </Nav>
-            <div style={{display:"flex",gap:"20px"}}>
-                <i class="bi bi-journal-bookmark-fill" style={{fontSize:"22px"}}></i>
-                <i class="bi bi-search" style={{fontSize:"22px"}}></i>
-                <i class="bi bi-person-circle" style={{fontSize:"22px"}}></i>
+            <div style={{display:"flex",gap:"20px",alignItems:"center"}}>
+                <a class="button1" style={{clr: "#7808d0"}} onClick={()=>check()}>Admin Portal</a>
+                <i class="bi bi-github" style={{fontSize:"22px"}}></i>
+                <i class="bi bi-linkedin" style={{fontSize:"22px"}}></i>
+                <i class="bi bi-instagram" style={{fontSize:"22px"}}></i>
             </div>
             </Navbar.Collapse>
         </Container>

@@ -17,7 +17,7 @@ export default function LoveStories() {
         <div className='mustread_flex'>
         {books.map((e)=>{
               return(
-                <LoveCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} />
+                <LoveCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} category={e.category} />
             )})
           }
         </div>

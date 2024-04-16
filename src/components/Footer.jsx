@@ -14,7 +14,7 @@ export default function Footer() {
                 </div>
                 <div style={{display:"flex",flexDirection:"row",gap:"50px",fontWeight:"600"}}>
                     <Nav.Link href="#action1">Home</Nav.Link>
-                    <Nav.Link href="/Library">Category</Nav.Link>
+                    <Nav.Link href="/Library">Library</Nav.Link>
                     <Nav.Link href="#topstories">Stories</Nav.Link>
                 </div>
             </div>

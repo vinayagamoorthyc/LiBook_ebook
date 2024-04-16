@@ -1,8 +1,7 @@
 import axios from 'axios';
 import {useEffect, useState } from "react";
  
-function BookCreate()
-{
+function BookCreate(){
   
   const [bookId, setBookId] = useState('');
   const [name, setName] = useState("");
@@ -13,14 +12,14 @@ function BookCreate()
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
-    axios.get("http://localhost:8080/lovebooks/getAll")
+    axios.get("http://localhost:8080/topbooks/getAll")
     .then((e=>setBooks(e.data)))
     .catch(err=>console.log(err));
     }, []);
     
       async function save(e){
           e.preventDefault();
-          axios.post("http://localhost:8080/lovebooks/create",
+          axios.post("http://localhost:8080/topbooks/create",
           {
           name: name,
           author: author,
@@ -46,7 +45,7 @@ function BookCreate()
   
     async function DeleteBook(id)
     {
-          await axios.delete("http://localhost:8080/lovebooks/delete/" + id).then(()=>{
+          await axios.delete("http://localhost:8080/topbooks/delete/" + id).then(()=>{
             alert("Student deleted Successfully");
             window.location.reload();
           })
@@ -55,7 +54,7 @@ function BookCreate()
     async function update(e)
     {
       e.preventDefault();
-          await axios.put("http://localhost:8080/lovebooks/edit/" + bookId ,
+          await axios.put("http://localhost:8080/topbooks/edit/" + bookId ,
         {name: name,author: author,year: year,url:url})
         .then(()=>{
           alert("Registation Updateddddd");
@@ -70,7 +69,7 @@ function BookCreate()
 
   return (
     <div>
-       <h1>Student Details</h1>
+       <h1 style={{textAlign:"center",padding:"15px",textDecoration:"underline"}}>Book Management</h1>
        <div class="container mt-4" >
           <form>
              
@@ -138,13 +137,12 @@ function BookCreate()
             </form>
           </div>
                 <br/>
-<table class="table" align="center">
+<table class="table" align="center" style={{textAlign:"center",width:"90%"}}>
   <thead>
     <tr>
       <th scope="col">Book Name</th>
       <th scope="col">Book Author</th>
       <th scope="col">Published Year</th>
-      
       <th scope="col">Option</th>
     </tr>
   </thead>
@@ -156,7 +154,6 @@ function BookCreate()
                 <td>{e.name}</td>
                 <td>{e.author}</td>
                 <td>{e.year}</td>
-                <td>{e.url}</td>        
                 <td>
                     <button type="button" class="btn btn-warning"  onClick={() => editBook(e)} >Edit</button>  
                     <button type="button" class="btn btn-danger" onClick={() => DeleteBook(e.bookId)}>Delete</button>

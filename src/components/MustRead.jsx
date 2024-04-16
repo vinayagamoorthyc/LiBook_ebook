@@ -18,7 +18,7 @@ export default function MustRead() {
       <div className='mustread_flex'>
         {books.map((e)=>{
           return(
-            <MustReadCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} />
+            <MustReadCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} category={e.category}/>
           )
         })}
       </div>

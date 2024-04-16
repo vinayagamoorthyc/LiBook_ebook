@@ -18,7 +18,7 @@ export default function TopStories() {
         <div className='mustread_flex'>
           {books.map((e)=>{
               return(
-                <TopCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} />
+                <TopCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} category={e.category}/>
             )})
           }
         </div>
