@@ -5,7 +5,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import "./NavBar.css"
-import logo from "../images/logo.png"
+import logo from "../images/logo.png";
+import toast, { Toaster } from 'react-hot-toast';
 
 function NavBar() {
 
@@ -14,7 +15,7 @@ function NavBar() {
         if(k==="vinayaga"){
             window.location="/BookCreate";
         }else{
-            alert("Access denied!");
+            toast.error('Access Denied');
         }
     }
 
@@ -45,6 +46,10 @@ function NavBar() {
             </Navbar.Collapse>
         </Container>
         </Navbar>
+        <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
     </center>
   );
 }

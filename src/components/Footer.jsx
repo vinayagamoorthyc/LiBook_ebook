@@ -19,9 +19,9 @@ export default function Footer() {
                 </div>
             </div>
             <center><hr style={{color:"rgba(0, 0, 0, 0.3)",width:"80%"}}/></center>
-            <div style={{textAlign:"center"}}>
+            <a style={{textAlign:"center",color:"black",textDecoration:"none"}} href='https://vinayagamoorthy.vercel.app/' target='_blank'>
                 &copy; Developed by Vinayaga Moorthy
-            </div>
+            </a>
         </div>
     </div>
   )

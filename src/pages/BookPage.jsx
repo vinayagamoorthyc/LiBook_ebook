@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 import "./BookPage.css";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function BookPage() {
   const [book,setBook] = useState([]);
@@ -31,11 +32,11 @@ export default function BookPage() {
             if (navigator.clipboard) {
               navigator.clipboard.writeText(window.location.href)
                 .then(() => {
-                  
+                  toast.success('Copied to Clipboard');
                 })
                 .catch(error => console.error('Error copying to clipboard:', error));
             } else {
-              alert('Please copy the URL manually');
+              toast.error('There was an error');
             }
           };
           fallbackShare();
@@ -98,6 +99,10 @@ export default function BookPage() {
         </p>
       </div><br /><br />
     </div>
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
     </center>
   )
 }
