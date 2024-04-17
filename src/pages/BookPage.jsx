@@ -6,8 +6,9 @@ import "./BookPage.css";
 export default function BookPage() {
   const [book,setBook] = useState([]);
     const {id} = useParams();
+
     useEffect(()=>{
-      window.scrollTo(0,0)
+      window.scrollTo(0,0);
       axios.get("http://localhost:8080/topbooks/search/"+id)
       .then((e)=>setBook(e.data))
       .catch(err=>console.log(err));
@@ -18,6 +19,32 @@ export default function BookPage() {
       .then((e)=>setBook(e.data))
       .catch(err=>console.log(err));
     }, []);
+
+    const handleShare = async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            url: window.location.href
+          });
+        } else {
+          const fallbackShare = () => {
+            if (navigator.clipboard) {
+              navigator.clipboard.writeText(window.location.href)
+                .then(() => {
+                  
+                })
+                .catch(error => console.error('Error copying to clipboard:', error));
+            } else {
+              alert('Please copy the URL manually');
+            }
+          };
+          fallbackShare();
+        }
+      } catch (error) {
+        console.error('Error sharing:', error.message);
+      }
+    };
+
   return (
     <center><br /><br />
     <div>
@@ -62,7 +89,7 @@ export default function BookPage() {
                         </span>
                         Start reading
                       </a>&nbsp;&nbsp;
-                      <h5><i class="bi bi-share"></i></h5>
+                      <h5 onClick={handleShare}><i class="bi bi-share"></i></h5>
           </div>            
         </div>
       </div><br />
