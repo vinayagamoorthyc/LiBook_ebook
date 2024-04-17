@@ -21,6 +21,12 @@
     border-radius: 0px;
 }
 
+@media(max-width:988px) {
+  .mustread_flex{
+    width: 95%;
+  }
+}
+
 .superballs {
     --uib-size: 100px;
     --uib-speed: 1.1s;

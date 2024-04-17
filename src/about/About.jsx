@@ -9,7 +9,7 @@ export default function About() {
             <div>
                 <img width={550} src={about} alt="" />
             </div>
-            <div style={{width:"50%"}}>
+            <div className='intro_content'>
                 <h3>About Us</h3>
                 <p>Join us in celebrating the joy of reading and embark on endless literary adventures with Ebook Library. Start exploring today and unlock the door to a world of imagination and knowledge."</p>
                 <p>Our platform is designed for convenience and accessibility. Access your favorite titles anytime, anywhere, across multiple devices. Whether you're curled up on the couch with a tablet, commuting with your smartphone, or studying at your desktop, your entire library is just a click away.</p>
