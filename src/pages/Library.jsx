@@ -13,6 +13,7 @@ export default function Library() {
   const [books2, setBooks2] = useState([]);
   const [books3, setBooks3] = useState([]);
   const all=[...books,...books2,...books3];
+  const [hide,setHide] = useState(true);
 
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
@@ -24,14 +25,20 @@ export default function Library() {
     setSearch(event.target.value);
   };
 
-  const filteredProducts = all.filter( (item)=> {
+  const filteredBooks = all.filter( (e)=> {
 
-    const categoryMatch = filter === 'all' || item.category === filter;
+    const categoryMatch = filter === 'all' || e.category === filter;
 
-    const searchMatch = item.name.toLowerCase().includes(search.toLowerCase());
+    const searchMatch = e.name.toLowerCase().includes(search.toLowerCase());
 
     return categoryMatch&searchMatch;
   });
+
+  // if(filteredBooks===books){
+  //   setHide(true);
+  // }else{
+  //   setHide(false);
+  // }
 
   useEffect(() => {
     axios.get("http://localhost:8080/books/getAll")
@@ -88,11 +95,14 @@ export default function Library() {
 </div><br /><br /><br /><br />
         <div className='lib_flex'>
           
-          {filteredProducts?.map((e)=>{
+          {filteredBooks?.map((e)=>{
               return(
                 <LibCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} category={e.category}/>
             )})
           }
+          <div hidden={hide} style={{fontWeight:"800",fontSize:"20px"}}>
+            No results Found!
+          </div>
           
         </div>
         <div>

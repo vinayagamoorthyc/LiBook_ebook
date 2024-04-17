@@ -11,7 +11,7 @@ function NavBar() {
 
     function check(){
         let k=window.prompt("Enter your admin key!");
-        if(k=="vinayaga"){
+        if(k==="vinayaga"){
             window.location="/BookCreate";
         }else{
             alert("Access denied!");
