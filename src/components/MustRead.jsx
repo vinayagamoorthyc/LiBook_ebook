@@ -18,7 +18,7 @@ export default function MustRead() {
 
   return (
     <center id=''>
-      <h2 style={{margin:"75px",width:"80%"}}>Must Read</h2>
+      <h2 className='headings'>Must Read</h2>
       <div className='mustread_flex'>
         <div class="superballs" hidden={load}>
           <div class="superballs__dot"></div>

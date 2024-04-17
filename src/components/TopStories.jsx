@@ -18,7 +18,7 @@ export default function TopStories() {
 
   return (
     <center id='topstories'>
-        <h2 style={{margin:"75px"}}>Top Stories</h2>
+        <h2 className='headings'>Top Stories</h2>
         <div className='mustread_flex'>
         <div class="superballs" hidden={load}>
           <div class="superballs__dot"></div>

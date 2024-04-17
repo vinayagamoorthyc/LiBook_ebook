@@ -22,9 +22,16 @@
     border-radius: 0px;
 }
 
+.headings{
+  margin: 75px;
+}
+
 @media(max-width:988px) {
   .mustread_flex{
     width: 95%;
+  }
+  .headings{
+    margin: 50px;
   }
 }
 
