@@ -31,7 +31,7 @@ function NavBar() {
                 style={{ maxHeight: '100px' }}
                 navbarScroll
             >
-                <Nav.Link href="#Home">Home</Nav.Link>
+                <Nav.Link onClick={()=>window.scrollTo(0,0)}>Home</Nav.Link>
                 <Nav.Link href="/Library">Library</Nav.Link>
                 <Nav.Link href="#about">About</Nav.Link>
                 <Nav.Link href="#brands">Brands</Nav.Link>

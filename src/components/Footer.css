@@ -17,3 +17,16 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.footer_navs{
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    gap: 50px;
+}
+
+@media (max-width:988px) {
+    .footer_navs{
+        gap: 25px;
+    }
+}

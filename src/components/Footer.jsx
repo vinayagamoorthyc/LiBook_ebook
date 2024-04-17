@@ -12,8 +12,8 @@ export default function Footer() {
                     <img src={logo} alt="LiBook" width={50} />
                     <label>LiBook</label>
                 </div>
-                <div style={{display:"flex",flexDirection:"row",gap:"50px",fontWeight:"600"}}>
-                    <Nav.Link href="#action1">Home</Nav.Link>
+                <div className='footer_navs'>
+                    <Nav.Link href="" onClick={()=>window.scrollTo(0,0)}>Home</Nav.Link>
                     <Nav.Link href="/Library">Library</Nav.Link>
                     <Nav.Link href="#topstories">Stories</Nav.Link>
                 </div>
