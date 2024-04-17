@@ -13,7 +13,7 @@ export default function Library() {
   const [books2, setBooks2] = useState([]);
   const [books3, setBooks3] = useState([]);
   const all=[...books,...books2,...books3];
-  const [hide,setHide] = useState(true);
+  const [load,setLoad] = useState(false);
 
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
@@ -34,23 +34,26 @@ export default function Library() {
     return categoryMatch&searchMatch;
   });
 
-  // if(filteredBooks===books){
-  //   setHide(true);
-  // }else{
-  //   setHide(false);
-  // }
-
   useEffect(() => {
     axios.get("http://localhost:8080/books/getAll")
-    .then((e=>setBooks(e.data)))
+    .then((e=>{
+      setLoad(true);
+      setBooks(e.data);
+    }))
     .catch(err=>console.log(err));
 
     axios.get("http://localhost:8080/topbooks/getAll")
-    .then((e=>setBooks2(e.data)))
+    .then((e=>{
+      setLoad(true);
+      setBooks2(e.data);
+    }))
     .catch(err=>console.log(err));
 
     axios.get("http://localhost:8080/lovebooks/getAll")
-    .then((e=>setBooks3(e.data)))
+    .then((e=>{
+      setLoad(true);
+      setBooks3(e.data);
+    }))
     .catch(err=>console.log(err));
     }, []);
 
@@ -94,15 +97,15 @@ export default function Library() {
         </center>
 </div><br /><br /><br /><br />
         <div className='lib_flex'>
-          
+        <div class="superballs" hidden={load}>
+          <div class="superballs__dot"></div>
+          <div class="superballs__dot"></div>
+        </div>
           {filteredBooks?.map((e)=>{
               return(
                 <LibCard name={e.name} bookId={e.bookId} author={e.author} year={e.year} url={e.url} desc={e.desc} category={e.category}/>
             )})
           }
-          <div hidden={hide} style={{fontWeight:"800",fontSize:"20px"}}>
-            No results Found!
-          </div>
           
         </div>
         <div>
