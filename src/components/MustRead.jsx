@@ -8,7 +8,7 @@ export default function MustRead() {
   const [load,setLoad] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/books/getAll")
+    axios.get("https://libook-pr0n.onrender.com/books/getAll")
     .then((e=>{
       setLoad(true);
       setBooks(e.data);

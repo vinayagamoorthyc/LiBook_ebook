@@ -7,7 +7,7 @@ export default function LoveStories() {
   const [load,setLoad] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/lovebooks/getAll")
+    axios.get("https://libook-pr0n.onrender.com/lovebooks/getAll")
     .then((e=>{
       setLoad(true);
       setBooks(e.data);

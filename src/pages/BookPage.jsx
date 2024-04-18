@@ -10,13 +10,13 @@ export default function BookPage() {
 
     useEffect(()=>{
       window.scrollTo(0,0);
-      axios.get("http://localhost:8080/topbooks/search/"+id)
+      axios.get("https://libook-pr0n.onrender.com/topbooks/search/"+id)
       .then((e)=>setBook(e.data))
       .catch(err=>console.log(err));
-      axios.get("http://localhost:8080/lovebooks/search/"+id)
+      axios.get("https://libook-pr0n.onrender.com/lovebooks/search/"+id)
       .then((e)=>setBook(e.data))
       .catch(err=>console.log(err));
-      axios.get("http://localhost:8080/books/search/"+id)
+      axios.get("https://libook-pr0n.onrender.com/books/search/"+id)
       .then((e)=>setBook(e.data))
       .catch(err=>console.log(err));
     }, []);

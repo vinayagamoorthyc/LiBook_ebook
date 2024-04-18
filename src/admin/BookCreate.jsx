@@ -12,14 +12,14 @@ function BookCreate(){
   const [books, setBooks] = useState([]);
  
   useEffect(() => {
-    axios.get("http://localhost:8080/topbooks/getAll")
+    axios.get("https://libook-pr0n.onrender.com/topbooks/getAll")
     .then((e=>setBooks(e.data)))
     .catch(err=>console.log(err));
     }, []);
     
       async function save(e){
           e.preventDefault();
-          axios.post("http://localhost:8080/topbooks/create",
+          axios.post("https://libook-pr0n.onrender.com/topbooks/create",
           {
           name: name,
           author: author,
@@ -45,7 +45,7 @@ function BookCreate(){
   
     async function DeleteBook(id)
     {
-          await axios.delete("http://localhost:8080/topbooks/delete/" + id).then(()=>{
+          await axios.delete("https://libook-pr0n.onrender.com/topbooks/delete/" + id).then(()=>{
             alert("Student deleted Successfully");
             window.location.reload();
           })
@@ -54,7 +54,7 @@ function BookCreate(){
     async function update(e)
     {
       e.preventDefault();
-          await axios.put("http://localhost:8080/topbooks/edit/" + bookId ,
+          await axios.put("https://libook-pr0n.onrender.com/topbooks/edit/" + bookId ,
         {name: name,author: author,year: year,url:url})
         .then(()=>{
           alert("Registation Updateddddd");

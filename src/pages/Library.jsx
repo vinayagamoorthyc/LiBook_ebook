@@ -35,21 +35,21 @@ export default function Library() {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:8080/books/getAll")
+    axios.get("https://libook-pr0n.onrender.com/books/getAll")
     .then((e=>{
       setLoad(true);
       setBooks(e.data);
     }))
     .catch(err=>console.log(err));
 
-    axios.get("http://localhost:8080/topbooks/getAll")
+    axios.get("https://libook-pr0n.onrender.com/topbooks/getAll")
     .then((e=>{
       setLoad(true);
       setBooks2(e.data);
     }))
     .catch(err=>console.log(err));
 
-    axios.get("http://localhost:8080/lovebooks/getAll")
+    axios.get("https://libook-pr0n.onrender.com/lovebooks/getAll")
     .then((e=>{
       setLoad(true);
       setBooks3(e.data);

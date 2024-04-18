@@ -7,7 +7,7 @@ export default function TopStories() {
   const [load,setLoad] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/topbooks/getAll")
+    axios.get("https://libook-pr0n.onrender.com/topbooks/getAll")
     .then((e=>{
       setLoad(true);
       setBooks(e.data);
