@@ -95,7 +95,7 @@ export default function BookPage() {
         </div>
       </div><br />
       <div className='bookpage_flex' id='read'>
-        <p>{book.desc}
+        <p style={{textAlign:"justify"}}>{book.desc}
         </p>
       </div><br /><br />
     </div>
