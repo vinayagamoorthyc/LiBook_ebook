@@ -55,7 +55,7 @@ function BookCreate(){
     {
       e.preventDefault();
           await axios.put("https://libook-pr0n.onrender.com/topbooks/edit/" + bookId ,
-        {name: name,author: author,year: year,url:url})
+        {name: name,author: author,year: year,url:url,desc:desc})
         .then(()=>{
           alert("Registation Updateddddd");
           setBookId("");
@@ -63,6 +63,7 @@ function BookCreate(){
           setAuthor("");
           setYear("");
           setUrl("");
+          setDesc("");
           window.location.reload();
         }).catch(err=>alert("Student Updateddd Failed"));
     }
